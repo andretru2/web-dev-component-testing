@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap");
+
+/* -------------- Globaal Settings------------------ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #202124;
+  font-family: "Roboto", "Lato";
+  color: #bdc1c6;
+  --font-size: 14px;
+  line-height: 1.4;
+}
+
+nav {
+  margin-top: 10px;
+  background-color: white;
+  border: 10px solid firebrick;
+  min-height: 10vh;
+}
+
+ul {
+  display: flex;
+  gap: 0.2em;
+  align-items: center; /*stretch makes the items the same height of the child that has the most space. Vertical axis if flex=row*/
+  justify-content: flex-start; /*horizontal axis if flex=row*/
+  list-style: none;
+}
+
+li {
+  background-color: #8cacea;
+
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 16%;
+  text-overflow: ellipsis; /* If the content has a border, this prevents the border from overflowing */
+  overflow: hidden;
+  --min-width: 4em;
+}
+
+ul li {
+  text-align: center;
+  white-space: nowrap;
+}
+
+ul li:hover {
+  border-bottom: 10px solid royalblue;
+}
+
+ul li a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  --font-size: 24px; /* use line-height instead of the font size */
+  line-height: 1.6;
+  border: 2px solid orange;
+  display: flex; /* do this so the content stretches to the size of the li element */
+  justify-content: center;
+}
+
+ul li:nth-child(2) {
+  background-color: orange;
+  --order: 1;
+  --text-align: center;
+}
+
+ul li:nth-child(3) {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container*/
+  margin-left: auto;
+}
